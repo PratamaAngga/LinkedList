@@ -1,20 +1,34 @@
+import java.util.Scanner;
 public class SLLMain20 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         SingleLinkedList20 sll = new SingleLinkedList20();
 
-        Mahasiswa20 mhs1 = new Mahasiswa20("20001", "Alya", "TI-1A", 3.75);
-        Mahasiswa20 mhs2 = new Mahasiswa20("20002", "Budi", "TI-1B", 3.50);
-        Mahasiswa20 mhs3 = new Mahasiswa20("20003", "Citra", "TI-1A", 3.90);
-        Mahasiswa20 mhs4 = new Mahasiswa20("20004", "Doni", "TI-1C", 3.30);
+        System.out.print("Masukkan jumlah data mahasiswa: ");
+        int jumlah = sc.nextInt();
+        sc.nextLine();
 
-        sll.print();
-        sll.addFirst(mhs4);
-        sll.print();
-        sll.addLast(mhs1);
-        sll.print();
-        sll.insertAfter("Doni", mhs3);
-        sll.insertAt(2, mhs2);
-        sll.print();
+        for (int i = 0; i < jumlah; i++) {
+            System.out.println("\nMasukkan data mahasiswa ke-" + (i + 1));
+            System.out.print("NIM: ");
+            String nim = sc.nextLine();
+            System.out.print("Nama: ");
+            String nama = sc.nextLine();
+            System.out.print("Kelas: ");
+            String kelas = sc.nextLine();
+            System.out.print("IPK: ");
+            double ipk = sc.nextDouble();
+            sc.nextLine();
+
+            Mahasiswa20 mhs = new Mahasiswa20(nim, nama, kelas, ipk);
+
+            sll.addLast(mhs);
+
+            System.out.println("Data setelah penambahan:");
+            sll.print();
+        }
+
+        sc.close();
     }
 }
 

@@ -10,6 +10,6 @@ public class Mahasiswa20 {
     }
 
     public void tampilInformasi() {
-        System.out.println(nim + " - " + nama + " - " + kelas +  " - " +  " - " + ipk);
+        System.out.println(nim + " - " + nama + " - " + kelas +  " - " + ipk);
     }
 }
